@@ -1,0 +1,60 @@
+<html>
+    <head>
+        <title> Home </title>
+        <style>
+            table {
+                border : 1px solid black;
+            }
+            th,td {
+                padding:10px;
+            }
+            th{
+                text-align:right;
+            }
+            .center{
+                position:absolute;
+                top:50%;
+                left:50%;
+            }
+        </style>
+    </head>
+    <body>
+        <!-- Below block is used to interconnect with Django -->
+        <!-- Django controls from below line till endblock -->
+        {% block content %}
+        <form action="register" method="POST" autocomplete="off">
+            <!-- Store data one by one -->
+            {% csrf_token %} 
+            <table class="center">
+                <tr>
+                    <th colspan="2">
+                        <center><h3>Registration</h3></center>
+                    </th>
+                </tr>
+                <tr>
+                    <th>Name</th>
+                    <td><input type="text" name="name" required></td>
+                </tr>
+                <tr>
+                    <th>Password</th>
+                    <td><input type="password" name="password" required></td>
+                </tr>
+                <tr>
+                    <th>Address</th>
+                    <td><input type="text" name="address" required></td>
+                </tr>
+                <tr>
+                    <th>Mail</th>
+                    <td><input type="email" name="mail" required></td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <center><input type="submit" value="Submit"></center>
+                    </td>
+                </tr>
+            </table>
+        </form>
+        {% endblock %}
+        <!-- Django control ends with above endblock -->
+    </body>
+</html>
