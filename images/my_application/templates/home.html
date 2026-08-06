@@ -1,0 +1,21 @@
+<html>
+
+<head>
+    <title>Home</title>
+    <!-- Below line will load the static folder -->
+    {% load static %}
+    <!-- In static folder -> css folder -> style.css -->
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+    <center>
+        <h1>static file(Django)</h1>
+    </center>
+    <!-- Inside static folder -> image folder -> image files -->
+    <img src="{% static 'image/image.webp' %}">
+    <img src="{% static 'image/image1.webp' %}">
+    <img src="{% static 'image/image2.webp' %}">
+</body>
+
+</html>
